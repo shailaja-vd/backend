@@ -26,16 +26,15 @@ pipeline {
                }
             }
         }
-        stage('Install Dependencies') {
+        /* stage('Install Dependencies') {
             steps {
                script{
                  sh """
                     npm install
-                    
                  """
                }
             }
-        }
+        } */
     }
     post { 
         always { 
