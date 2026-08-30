@@ -31,6 +31,7 @@ pipeline {
                script{
                  sh """
                     npm install
+                    
                  """
                }
             }
