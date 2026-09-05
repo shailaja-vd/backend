@@ -26,7 +26,17 @@ pipeline {
                }
             }
         }
-        stage('Install Dependencies') {
+        stage('Docker Build') {
+            steps {
+               script{
+                 sh """
+                    docker build -t backend:v1.0.0 .
+                 """
+               }
+            }
+        }
+    }
+    stage('Install Dependencies') {
             steps {
                script{
                  sh """
