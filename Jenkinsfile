@@ -26,21 +26,20 @@ pipeline {
                }
             }
         }
+        stage('Install Dependencies') {
+            steps {
+               script{
+                 sh """
+                    npm install
+                 """
+               }
+            }
+        }
         stage('Docker Build') {
             steps {
                script{
                  sh """
                     docker build -t backend:v1.0.0 .
-                 """
-               }
-            }
-        }
-    }
-    stage('Install Dependencies') {
-            steps {
-               script{
-                 sh """
-                    npm install
                  """
                }
             }
@@ -58,3 +57,4 @@ pipeline {
             echo 'I will run when pipeline is success'
         }
     }
+}
